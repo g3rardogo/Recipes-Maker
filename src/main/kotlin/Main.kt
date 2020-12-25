@@ -24,6 +24,7 @@ fun main() {
     }
     do{
         showMainMenu()
+        //variable que guarda la opcion que el usuario ingresa
         val response:String? = readLine()
         if (response == "1"){
             do {
