@@ -1,4 +1,5 @@
 fun main() {
+    //Funcion que muestra el menu principal
     fun showMainMenu(){
         println(":: Bienvenido a Recipe Maker::")
         println("Seleccione la opcion deseada")
@@ -7,6 +8,7 @@ fun main() {
         println("3. Salir")
     }
 
+    //Funcion que muestra el menu principal
     fun showMakeRecipe(){
         println("Seleccione los ingredientes:")
         println("1. Agua")
