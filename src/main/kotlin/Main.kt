@@ -22,6 +22,7 @@ fun main() {
         println("9. Salir")
 
     }
+    //Ciclo que muestra el menu principal y lee las opciones que el usuario ingresa
     do{
         showMainMenu()
         //variable que guarda la opcion que el usuario ingresa
