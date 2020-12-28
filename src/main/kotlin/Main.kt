@@ -8,8 +8,8 @@ fun main() {
         println("3. Salir")
     }
 
-    //Funcion que muestra el menu principal
-    fun showMakeRecipe(){
+    //Funcion que muestra el menu de ingredientes
+    fun makeRecipe(){
         println("Seleccione los ingredientes:")
         println("1. Agua")
         println("2. Leche")
@@ -22,6 +22,12 @@ fun main() {
         println("9. Salir")
 
     }
+
+    //Funcion que muestra las recetas creadas
+    fun viewRecipe(){
+        println("::Ver mis recetas::")
+    }
+    
     //Ciclo que muestra el menu principal y lee las opciones que el usuario ingresa
     do{
         showMainMenu()
@@ -29,9 +35,11 @@ fun main() {
         val response:String? = readLine()
         if (response == "1"){
             do {
-                showMakeRecipe()
+                makeRecipe()
                 val responseRecipe: String? = readLine()
             } while (responseRecipe != "9")
+        } else if (response == "2"){
+            viewRecipe()
         }
     } while (response != "3")
 }
