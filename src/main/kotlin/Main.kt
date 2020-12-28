@@ -23,6 +23,7 @@ fun main() {
 
     }
 
+    //Funcion que muestra las recetas creadas
     fun viewRecipe(){
         println("::Ver mis recetas::")
     }
