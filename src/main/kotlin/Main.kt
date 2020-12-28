@@ -22,6 +22,10 @@ fun main() {
         println("9. Salir")
 
     }
+
+    fun viewRecipe(){
+        println("::Ver mis recetas::")
+    }
     
     //Ciclo que muestra el menu principal y lee las opciones que el usuario ingresa
     do{
