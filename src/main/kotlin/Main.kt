@@ -38,6 +38,8 @@ fun main() {
                 makeRecipe()
                 val responseRecipe: String? = readLine()
             } while (responseRecipe != "9")
+        } else if (response == "2"){
+            viewRecipe()
         }
     } while (response != "3")
 }
