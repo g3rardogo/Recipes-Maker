@@ -1,3 +1,4 @@
+import model.*
 fun main() {
     //Funcion que muestra el menu principal
     fun showMainMenu(){
@@ -20,7 +21,20 @@ fun main() {
         println("7. Huevos")
         println("8. Aceite")
         println("9. Salir")
-
+        val response: String? = readLine()
+        when(response){
+            "1" -> {println(Agua().create())
+                    makeRecipe()}
+            "2" -> {Leche().menu()}
+            "3" -> {println(Carne().create())
+                    makeRecipe()}
+            "4" -> {Verdura().menu()}
+            "5" -> {Fruta().menu()}
+            "6" -> {Cereal().menu()}
+            "7" -> {println(Huevo().create())
+                    makeRecipe()}
+            "8" -> {Aceite().menu()}
+        }
     }
 
     //Funcion que muestra las recetas creadas
