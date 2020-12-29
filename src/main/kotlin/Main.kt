@@ -1,3 +1,5 @@
+import model.Product
+import model.Agua
 fun main() {
     //Funcion que muestra el menu principal
     fun showMainMenu(){
@@ -20,6 +22,15 @@ fun main() {
         println("7. Huevos")
         println("8. Aceite")
         println("9. Salir")
+        val response: String? = readLine()
+        val agua = Agua("Agua", 100)
+        when(response){
+            "1" -> {println(agua.create())
+                    makeRecipe()
+            }
+
+        }
+
 
     }
 
