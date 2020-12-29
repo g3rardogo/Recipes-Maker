@@ -1,6 +1,6 @@
 package model
 
-class Agua(name: String, cantidad: Int): Product(name, cantidad){
+class Agua(): Product(){
 
     override fun create(): String{
         return "Agua agregada a la receta"
