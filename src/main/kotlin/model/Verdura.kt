@@ -1,8 +1,8 @@
 package model
 
 class Verdura(): Product() {
-    override fun create(): String {
-        return "Verdura agregada a la receta"
+    override fun create(response: String){
+        println("Verdura agregada a la receta")
     }
 
     fun menu(){

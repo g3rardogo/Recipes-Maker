@@ -1,8 +1,8 @@
 package model
 
 class Leche(): Product() {
-    override fun create(): String {
-        return "Leche agregada a la receta"
+    override fun create(response: String){
+        println("Leche agregada a la receta")
     }
 
     fun menu(){

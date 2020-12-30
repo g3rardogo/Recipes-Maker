@@ -23,16 +23,13 @@ fun main() {
         println("9. Salir")
         val response: String? = readLine()
         when(response){
-            "1" -> {println(Agua().create())
-                    makeRecipe()}
+            "1" -> {Agua().cantidad()}
             "2" -> {Leche().menu()}
-            "3" -> {println(Carne().create())
-                    makeRecipe()}
+            "3" -> {Carne().cantidad()}
             "4" -> {Verdura().menu()}
             "5" -> {Fruta().menu()}
             "6" -> {Cereal().menu()}
-            "7" -> {println(Huevo().create())
-                    makeRecipe()}
+            "7" -> {Huevo().cantidad()}
             "8" -> {Aceite().menu()}
         }
     }

@@ -1,4 +1,5 @@
 package model
 
-class Receta {
+open class Receta {
+    var receta = listOf<String>()
 }

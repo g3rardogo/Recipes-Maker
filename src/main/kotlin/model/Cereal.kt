@@ -1,8 +1,8 @@
 package model
 
 class Cereal(): Product() {
-    override fun create(): String{
-        return "Cereal agregado a la receta"
+    override fun create(response: String) {
+        println("Cereal agregado a la receta")
     }
 
     fun menu(){

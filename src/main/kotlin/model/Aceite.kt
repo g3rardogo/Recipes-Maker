@@ -3,9 +3,12 @@ package model
 class Aceite(): Product() {
     val menu = listOf<String>("1. Aceite de girasol", "2. Aceite de oliva", "3. Aceite de coco", "4. Aceite de palma")
 
-    override fun create(): String {
-
-        return "Aceite agregado a la receta"
+    //Cambiar a int
+    override fun create(response: String) {
+        for (respuesta in response){
+            receta.plus(menu[response.toInt()])
+            println(menu[response.toInt()])
+        }
     }
 
     fun menu(){
@@ -14,6 +17,9 @@ class Aceite(): Product() {
         }
         val response: String? = readLine()
         println(response)
+        if (response != null) {
+            create(response)
+        }
     }
 
 }
