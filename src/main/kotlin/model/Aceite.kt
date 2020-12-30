@@ -1,12 +1,19 @@
 package model
 
 class Aceite(): Product() {
+    val menu = listOf<String>("1. Aceite de girasol", "2. Aceite de oliva", "3. Aceite de coco", "4. Aceite de palma")
+
     override fun create(): String {
+
         return "Aceite agregado a la receta"
     }
 
     fun menu(){
-        println("Aceites:\n1.Aceite de girasol\n2.Aceite de oliva\n3.Aceite de coco\n4.Aceite de palma")
+        for (ingredient in menu){
+            println(ingredient)
+        }
+        val response: String? = readLine()
+        println(response)
     }
 
 }
