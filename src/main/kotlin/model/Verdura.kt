@@ -1,11 +1,10 @@
 package model
 
 class Verdura(): Product() {
-    override fun create(): String {
-        return "Verdura agregada a la receta"
-    }
+    val menu = listOf<String>("Zanahorias", "Brocoli", "Tomate", "Calabacin", "Lechuga", "Patata", "Berenjena")
+    val receta = Receta()
 
-    fun menu(){
-        println("Verduras:\n1.Zanahoria\n2.Brocoli\n3.Tomate\n4.Calabacin\n5.Lechuga\n6.Patata\n7.Berenjena")
+    fun main(){
+        receta.showMenu(menu)
     }
 }

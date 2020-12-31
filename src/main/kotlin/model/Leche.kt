@@ -1,11 +1,10 @@
 package model
 
 class Leche(): Product() {
-    override fun create(): String {
-        return "Leche agregada a la receta"
-    }
+    val menu = listOf<String>("Leche desnatada", "Leche entera")
+    val receta = Receta()
 
-    fun menu(){
-        println("Leche:\n1.Leche desnatada\n2.Leche entera")
+    fun main(){
+        receta.showMenu(menu)
     }
 }

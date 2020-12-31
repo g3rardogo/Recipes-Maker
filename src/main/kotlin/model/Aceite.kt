@@ -1,12 +1,37 @@
 package model
+import model.*
 
-class Aceite(): Product() {
-    override fun create(): String {
-        return "Aceite agregado a la receta"
+open class Aceite(): Receta(){
+    val menu = listOf<String>("Aceite de girasol", "Aceite de oliva", "Aceite de coco", "Aceite de palma")
+    val receta = Receta()
+
+    fun main(){
+        receta.showMenu(menu)
+    }
+
+    //Cambiar a int
+    /*override fun create(response: String) {
+        ingredientes.add(menu[response.toInt() - 1])
+        //println(menu[response.toInt() - 1]
+        cantidad(menu[response.toInt() - 1])
     }
 
     fun menu(){
-        println("Aceites:\n1.Aceite de girasol\n2.Aceite de oliva\n3.Aceite de coco\n4.Aceite de palma")
+        for (ingredient in menu){
+            println(ingredient)
+        }
+        val response: String? = readLine()
+        if (response != null) {
+            create(response)
+        }
     }
 
+    fun cantidad(ingrediente: String){
+        println("Ingrese la cantidad de $ingrediente")
+        val response: String? = readLine()
+        ingredientes.add(response.toString())
+        println(ingredientes)
+        println("Ingrediente agregado exitosamente")
+        menu()
+    }*/
 }

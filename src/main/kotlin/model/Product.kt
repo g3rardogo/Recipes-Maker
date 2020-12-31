@@ -1,8 +1,9 @@
 package model
 
-open class Product() {
+open class Product(): Receta() {
 
-    open fun create(): String{
-        return "Producto agregado a la receta"
+    open fun create(response: String) {
+        println("Producto agregado a la receta")
     }
+
 }
