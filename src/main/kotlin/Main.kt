@@ -11,6 +11,7 @@ fun main() {
 
     //Funcion que muestra el menu de ingredientes
     fun makeRecipe(){
+        Receta().nameRecipe()
         println("Seleccione los ingredientes:")
         println("1. Agua")
         println("2. Leche")
