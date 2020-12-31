@@ -8,34 +8,6 @@ fun main() {
         println("2. Ver mis recetas")
         println("3. Salir")
     }
-
-    //Funcion que muestra el menu de ingredientes
-    fun makeRecipe(){
-        Receta().nameRecipe()
-        println("Seleccione los ingredientes:")
-        println("1. Agua")
-        println("2. Leche")
-        println("3. Carne")
-        println("4. Verduras")
-        println("5. Frutas")
-        println("6. Cereal")
-        println("7. Huevos")
-        println("8. Aceite")
-        println("9. Salir")
-        val response: String? = readLine()
-        when(response){
-            "1" -> {Agua().cantidad()}
-            "2" -> {Leche().menu()}
-            "3" -> {Carne().cantidad()}
-            "4" -> {Verdura().menu()}
-            "5" -> {Fruta().menu()}
-            "6" -> {Cereal().menu()}
-            "7" -> {Huevo().cantidad()}
-            "8" -> {Aceite().main()}
-
-        }
-    }
-
     //Funcion que muestra las recetas creadas
     fun viewRecipe(){
         println("::Ver mis recetas::")
@@ -48,7 +20,7 @@ fun main() {
         val response:String? = readLine()
         if (response == "1"){
             do {
-                makeRecipe()
+                Receta().makeRecipe()
                 val responseRecipe: String? = readLine()
             } while (responseRecipe != "9")
         } else if (response == "2"){

@@ -1,7 +1,36 @@
 package model
 
-open class Receta {
+open class Receta{
     private val ingredientes = mutableListOf<String>()
+
+    //Funcion que muestra el menu de ingredientes
+    fun makeRecipe(){
+        Receta().nameRecipe()
+        val menuIngredientes = """Seleccione los ingredientes:
+1. Agua
+2. Leche
+3. Carne
+4. Verduras
+5. Frutas
+6. Cereal
+7. Huevos
+8. Aceite
+9. Salir
+        """
+        println(menuIngredientes)
+        val response: String? = readLine()
+        when(response){
+            "1" -> {Agua().cantidad()}
+            "2" -> {Leche().menu()}
+            "3" -> {Carne().cantidad()}
+            "4" -> {Verdura().menu()}
+            "5" -> {Fruta().menu()}
+            "6" -> {Cereal().menu()}
+            "7" -> {Huevo().cantidad()}
+            "8" -> {Aceite().main()}
+
+        }
+    }
 
     //Funcion que le asigna un nombre a la receta
     fun nameRecipe(){
@@ -36,10 +65,10 @@ open class Receta {
     fun getResponse(menu: List<String>){
         val response: String? = readLine()
         if (response != null) {
-            if(response != "0"){
+            if(response == "0"){
+                makeRecipe()
+            } else {
                 create(response, menu)
-            } else if(response == "0"){
-                println("ASI ES")
             }
         }
     }
