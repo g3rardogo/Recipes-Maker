@@ -1,49 +1,34 @@
 package model
+val ingredientes = mutableListOf<String>()
+var nameRecipe: String? = null
 
 open class Receta{
-    private val ingredientes = mutableListOf<String>()
 
     //Funcion que muestra el menu de ingredientes
-    fun makeRecipe(){
-        nameRecipe()
-        val menuIngredientes = """Seleccione los ingredientes:
-1. Agua
-2. Leche
-3. Carne
-4. Verduras
-5. Frutas
-6. Cereal
-7. Huevos
-8. Aceite
-9. Salir
-        """
+    fun makeRecipe(response: String){
+        var response: String?
+        if(nameRecipe == null){
+            do {
+                println("Ingresa el nombre de la receta: ")
+                response = readLine()
+                nameRecipe = response
+                if (response != null) {
+                    ingredientes.add("Nombre receta: $response")
+                }
+            } while(response == "")
+        }
+        val menuIngredientes = "Seleccione los ingredientes:\n1. Agua\n2. Leche\n3. Carne\n4. Verduras\n5. Frutas\n6. Cereal\n7. Huevos\n8. Aceite\n0. Salir"
         println(menuIngredientes)
-        val response: String? = readLine()
+        response = readLine()
         when(response){
             "1" -> {Agua().cantidad()}
-            "2" -> {Leche().menu()}
+            "2" -> {Leche().main()}
             "3" -> {Carne().cantidad()}
-            "4" -> {Verdura().menu()}
-            "5" -> {Fruta().menu()}
-            "6" -> {Cereal().menu()}
+            "4" -> {Verdura().main()}
+            "5" -> {Fruta().main()}
+            "6" -> {Cereal().main()}
             "7" -> {Huevo().cantidad()}
             "8" -> {Aceite().main()}
-
-        }
-    }
-
-    //Funcion que le asigna un nombre a la receta
-    fun nameRecipe(){
-        var nameRecipe: String = "Receta"
-        do {
-            println("Ingrese el nombre de la receta:")
-            val response: String? = readLine()
-            if (response != null) {
-                nameRecipe = response
-            }
-        } while (response == null || response == "")
-        if (nameRecipe == null || nameRecipe == "") {
-            println(ingredientes)
         }
     }
 
@@ -59,7 +44,7 @@ open class Receta{
         val response: String? = readLine()
         if (response != null) {
             if(response == "0"){
-                makeRecipe()
+                makeRecipe(response)
             } else {
                 create(response, menu)
             }
@@ -81,10 +66,5 @@ open class Receta{
         println(ingredientes)
         showMenu(menu)
     }
-
-
-
-
-
 
 }

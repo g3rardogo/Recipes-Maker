@@ -1,11 +1,10 @@
 package model
 
-class Cereal(): Product() {
-    override fun create(response: String) {
-        println("Cereal agregado a la receta")
-    }
+class Cereal(): Receta() {
+    val menu = listOf<String>("Platanos", "Fresas", "Uvas", "Manzanas", "Pera", "Kiwi")
+    val receta = Receta()
 
-    fun menu(){
-        println("Cereales:\n1.Avena\n2.Trigo\n3.Uvas\n4.Arroz\n5.Maiz")
+    fun main(){
+        receta.showMenu(menu)
     }
 }

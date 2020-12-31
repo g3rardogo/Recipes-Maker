@@ -20,7 +20,7 @@ fun main() {
         val response:String? = readLine()
         if (response == "1"){
             do {
-                Receta().makeRecipe()
+                Receta().makeRecipe(response)
                 val responseRecipe: String? = readLine()
             } while (responseRecipe != "9")
         } else if (response == "2"){
