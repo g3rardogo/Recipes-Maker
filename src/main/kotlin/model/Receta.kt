@@ -1,5 +1,5 @@
 package model
 
 open class Receta {
-    var receta = listOf<String>()
+    val ingredientes = mutableListOf<String>()
 }
