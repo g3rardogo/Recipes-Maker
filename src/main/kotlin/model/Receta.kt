@@ -5,7 +5,7 @@ open class Receta{
 
     //Funcion que muestra el menu de ingredientes
     fun makeRecipe(){
-        Receta().nameRecipe()
+        nameRecipe()
         val menuIngredientes = """Seleccione los ingredientes:
 1. Agua
 2. Leche
@@ -47,13 +47,6 @@ open class Receta{
         }
     }
 
-    //Funcion que agrega los ingredientes a la receta
-    fun create(response: String, menu: List<String>) {
-        ingredientes.add(menu[response.toInt() - 1])
-        //println(menu[response.toInt() - 1]
-        cantidad(menu[response.toInt() - 1], menu)
-    }
-
     //Funcion que muestra los ingredientes
     fun showMenu(menu: List<String>){
         for (ingredient in menu){
@@ -73,7 +66,12 @@ open class Receta{
         }
     }
 
-
+    //Funcion que agrega los ingredientes a la receta
+    fun create(response: String, menu: List<String>) {
+        ingredientes.add(menu[response.toInt() - 1])
+        //println(menu[response.toInt() - 1]
+        cantidad(menu[response.toInt() - 1], menu)
+    }
     //Funcion que solicita la cantidad del ingrediente seleccionado
     fun cantidad(ingrediente: String, menu: List<String>){
         println("Ingrese la cantidad de $ingrediente")
@@ -83,5 +81,10 @@ open class Receta{
         println(ingredientes)
         showMenu(menu)
     }
+
+
+
+
+
 
 }
