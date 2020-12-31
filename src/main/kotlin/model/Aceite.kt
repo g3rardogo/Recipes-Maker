@@ -1,9 +1,16 @@
 package model
+import model.*
 
-class Aceite(): Product() {
+open class Aceite(): Receta(){
     val menu = listOf<String>("Aceite de girasol", "Aceite de oliva", "Aceite de coco", "Aceite de palma")
+    val receta = Receta()
+
+    fun main(){
+        receta.showMenu(menu)
+    }
+
     //Cambiar a int
-    override fun create(response: String) {
+    /*override fun create(response: String) {
         ingredientes.add(menu[response.toInt() - 1])
         //println(menu[response.toInt() - 1]
         cantidad(menu[response.toInt() - 1])
@@ -26,5 +33,5 @@ class Aceite(): Product() {
         println(ingredientes)
         println("Ingrediente agregado exitosamente")
         menu()
-    }
+    }*/
 }

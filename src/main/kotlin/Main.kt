@@ -31,7 +31,8 @@ fun main() {
             "5" -> {Fruta().menu()}
             "6" -> {Cereal().menu()}
             "7" -> {Huevo().cantidad()}
-            "8" -> {Aceite().menu()}
+            "8" -> {Aceite().main()}
+
         }
     }
 
