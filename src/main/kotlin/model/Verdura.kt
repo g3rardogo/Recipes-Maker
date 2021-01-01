@@ -1,6 +1,6 @@
 package model
 
-class Verdura(): Product() {
+class Verdura(): Receta() {
     val menu = listOf<String>("Zanahorias", "Brocoli", "Tomate", "Calabacin", "Lechuga", "Patata", "Berenjena")
     val receta = Receta()
 

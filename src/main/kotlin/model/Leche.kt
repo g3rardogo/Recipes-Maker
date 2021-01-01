@@ -1,6 +1,6 @@
 package model
 
-class Leche(): Product() {
+class Leche(): Receta() {
     val menu = listOf<String>("Leche desnatada", "Leche entera")
     val receta = Receta()
 
