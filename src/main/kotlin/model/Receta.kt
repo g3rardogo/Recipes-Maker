@@ -21,14 +21,37 @@ open class Receta{
         println(menuIngredientes)
         response = readLine()
         when(response){
-            "1" -> {Agua().cantidad()}
+            "0" -> {nameRecipe = null}
+            "1" -> {Agua().main(response)}
             "2" -> {Leche().main()}
-            "3" -> {Carne().cantidad()}
+            "3" -> {Carne().main(response)}
             "4" -> {Verdura().main()}
             "5" -> {Fruta().main()}
             "6" -> {Cereal().main()}
-            "7" -> {Huevo().cantidad()}
+            "7" -> {Huevo().main(response)}
             "8" -> {Aceite().main()}
+            else -> {
+                if (response != null) {
+                    println("Seleccione una opcion correcta")
+                    makeRecipe(response)
+                }
+            }
+        }
+    }
+
+    //Funcion que muestra el menu principal
+    fun showMainMenu(){
+        println(":: Bienvenido a Recipe Maker::")
+        println("Seleccione la opcion deseada")
+        println("1. Hacer una receta")
+        println("2. Ver mis recetas")
+        println("0. Salir")
+    }
+
+    //Funcion que muestra las recetas creadas
+    fun viewRecipe(){
+        for (ingrediente in ingredientes){
+            println(ingrediente)
         }
     }
 
@@ -52,18 +75,16 @@ open class Receta{
     }
 
     //Funcion que agrega los ingredientes a la receta
-    fun create(response: String, menu: List<String>) {
-        ingredientes.add(menu[response.toInt() - 1])
-        //println(menu[response.toInt() - 1]
+    open fun create(response: String, menu: List<String>) {
+        ingredientes.add(menu[response.toInt() - 1] + ":")
         cantidad(menu[response.toInt() - 1], menu)
     }
     //Funcion que solicita la cantidad del ingrediente seleccionado
-    fun cantidad(ingrediente: String, menu: List<String>){
-        println("Ingrese la cantidad de $ingrediente")
+    open fun cantidad(ingrediente: String, menu: List<String>){
+        println("Ingrese la cantidad de $ingrediente y su unidad de medida")
         val response: String? = readLine()
         ingredientes.add(response.toString())
         println("Ingrediente agregado exitosamente")
-        println(ingredientes)
         showMenu(menu)
     }
 
