@@ -24,11 +24,11 @@ open class Receta{
             "0" -> {nameRecipe = null}
             "1" -> {Agua().main(response)}
             "2" -> {Leche().main()}
-            "3" -> {Carne().cantidad()}
+            "3" -> {Carne().main(response)}
             "4" -> {Verdura().main()}
             "5" -> {Fruta().main()}
             "6" -> {Cereal().main()}
-            "7" -> {Huevo().cantidad()}
+            "7" -> {Huevo().main(response)}
             "8" -> {Aceite().main()}
             else -> {
                 if (response != null) {

@@ -1,15 +1,26 @@
 package model
 
-class Huevo(): Product() {
-    override fun create(response: String) {
-        println("Huevos agregados a la receta")
+class Huevo(): Receta() {
+    val menu = listOf<String>("Huevo")
+    val receta = Receta()
+
+    override fun create(response: String, menu: List<String>) {
+        println(response)
+        ingredientes.add(menu[response.toInt() - 7])
+        cantidad(menu[response.toInt() - 7], menu)
     }
 
-    fun cantidad(){
-        println("Ingrese la cantidad de agua a agregar: ")
+    override fun cantidad(ingrediente: String, menu: List<String>) {
+        println("Ingrese la cantidad de $ingrediente y su unidad de medida")
         val response: String? = readLine()
+        ingredientes.add(response.toString())
+        println("Ingrediente agregado exitosamente")
+        println(ingredientes)
         if (response != null) {
-            create(response)
+            makeRecipe(response)
         }
+    }
+    fun main(response: String){
+        create(response, menu)
     }
 }
