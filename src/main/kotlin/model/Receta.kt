@@ -22,7 +22,7 @@ open class Receta{
         response = readLine()
         when(response){
             "0" -> {nameRecipe = null}
-            "1" -> {Agua().cantidad()}
+            "1" -> {Agua().main(response)}
             "2" -> {Leche().main()}
             "3" -> {Carne().cantidad()}
             "4" -> {Verdura().main()}
@@ -73,13 +73,12 @@ open class Receta{
     }
 
     //Funcion que agrega los ingredientes a la receta
-    fun create(response: String, menu: List<String>) {
+    open fun create(response: String, menu: List<String>) {
         ingredientes.add(menu[response.toInt() - 1])
-        //println(menu[response.toInt() - 1]
         cantidad(menu[response.toInt() - 1], menu)
     }
     //Funcion que solicita la cantidad del ingrediente seleccionado
-    fun cantidad(ingrediente: String, menu: List<String>){
+    open fun cantidad(ingrediente: String, menu: List<String>){
         println("Ingrese la cantidad de $ingrediente")
         val response: String? = readLine()
         ingredientes.add(response.toString())
