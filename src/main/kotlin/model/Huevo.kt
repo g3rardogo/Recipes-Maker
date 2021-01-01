@@ -6,7 +6,7 @@ class Huevo(): Receta() {
 
     override fun create(response: String, menu: List<String>) {
         println(response)
-        ingredientes.add(menu[response.toInt() - 7])
+        ingredientes.add(menu[response.toInt() - 7] + ":")
         cantidad(menu[response.toInt() - 7], menu)
     }
 

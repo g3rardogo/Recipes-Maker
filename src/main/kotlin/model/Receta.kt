@@ -50,7 +50,9 @@ open class Receta{
 
     //Funcion que muestra las recetas creadas
     fun viewRecipe(){
-        println("::Ver mis recetas::")
+        for (ingrediente in ingredientes){
+            println(ingrediente)
+        }
     }
 
     //Funcion que muestra los ingredientes
@@ -74,12 +76,12 @@ open class Receta{
 
     //Funcion que agrega los ingredientes a la receta
     open fun create(response: String, menu: List<String>) {
-        ingredientes.add(menu[response.toInt() - 1])
+        ingredientes.add(menu[response.toInt() - 1] + ":")
         cantidad(menu[response.toInt() - 1], menu)
     }
     //Funcion que solicita la cantidad del ingrediente seleccionado
     open fun cantidad(ingrediente: String, menu: List<String>){
-        println("Ingrese la cantidad de $ingrediente")
+        println("Ingrese la cantidad de $ingrediente y su unidad de medida")
         val response: String? = readLine()
         ingredientes.add(response.toString())
         println("Ingrediente agregado exitosamente")

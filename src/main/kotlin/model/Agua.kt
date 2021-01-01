@@ -9,7 +9,7 @@ class Agua(): Receta(){
     }
 
     override fun cantidad(ingrediente: String, menu: List<String>) {
-        println("Ingrese la cantidad de $ingrediente")
+        println("Ingrese la cantidad de $ingrediente y su unidad de medida")
         val response: String? = readLine()
         ingredientes.add(response.toString())
         println("Ingrediente agregado exitosamente")
