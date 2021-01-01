@@ -21,6 +21,7 @@ open class Receta{
         println(menuIngredientes)
         response = readLine()
         when(response){
+            "0" -> {nameRecipe = null}
             "1" -> {Agua().cantidad()}
             "2" -> {Leche().main()}
             "3" -> {Carne().cantidad()}
@@ -29,7 +30,27 @@ open class Receta{
             "6" -> {Cereal().main()}
             "7" -> {Huevo().cantidad()}
             "8" -> {Aceite().main()}
+            else -> {
+                if (response != null) {
+                    println("Seleccione una opcion correcta")
+                    makeRecipe(response)
+                }
+            }
         }
+    }
+
+    //Funcion que muestra el menu principal
+    fun showMainMenu(){
+        println(":: Bienvenido a Recipe Maker::")
+        println("Seleccione la opcion deseada")
+        println("1. Hacer una receta")
+        println("2. Ver mis recetas")
+        println("0. Salir")
+    }
+
+    //Funcion que muestra las recetas creadas
+    fun viewRecipe(){
+        println("::Ver mis recetas::")
     }
 
     //Funcion que muestra los ingredientes
