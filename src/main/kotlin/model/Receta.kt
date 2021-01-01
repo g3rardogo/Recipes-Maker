@@ -85,7 +85,6 @@ open class Receta{
         val response: String? = readLine()
         ingredientes.add(response.toString())
         println("Ingrediente agregado exitosamente")
-        println(ingredientes)
         showMenu(menu)
     }
 

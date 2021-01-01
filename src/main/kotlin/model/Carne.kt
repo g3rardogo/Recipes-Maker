@@ -5,7 +5,6 @@ class Carne(): Receta() {
     val receta = Receta()
 
     override fun create(response: String, menu: List<String>) {
-        println(response)
         ingredientes.add(menu[response.toInt() - 3] + ":")
         cantidad(menu[response.toInt() - 3], menu)
     }
@@ -15,7 +14,6 @@ class Carne(): Receta() {
         val response: String? = readLine()
         ingredientes.add(response.toString())
         println("Ingrediente agregado exitosamente")
-        println(ingredientes)
         if (response != null) {
             makeRecipe(response)
         }

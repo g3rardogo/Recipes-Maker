@@ -13,7 +13,6 @@ class Agua(): Receta(){
         val response: String? = readLine()
         ingredientes.add(response.toString())
         println("Ingrediente agregado exitosamente")
-        println(ingredientes)
         if (response != null) {
             makeRecipe(response)
         }
